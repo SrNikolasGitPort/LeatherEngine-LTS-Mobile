@@ -41,8 +41,6 @@ class SUtil {
 			curStorageType = forcedType;
 		daPath = switch (curStorageType) {
 			case "EXTERNAL": AndroidEnvironment.getExternalStorageDirectory() + '/.' + lime.app.Application.current.meta.get('file');
-			case "OBB": android.content.Context.getObbDir();
-			case "MEDIA": AndroidEnvironment.getExternalStorageDirectory() + '/Android/media/' + lime.app.Application.current.meta.get('packageName');
 			default: android.content.Context.getExternalFilesDir();
 		}
 		daPath = haxe.io.Path.addTrailingSlash(daPath);
